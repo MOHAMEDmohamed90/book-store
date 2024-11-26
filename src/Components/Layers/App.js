@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BookList from '../Books/BookList';
 import AddBook from '../Books/AddBook';
 import EditBook from '../Books/EditBook';
+import BookDetails from '../Books/BookDetail';
 
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/" element={<BookList books={books} deleteBook={deleteBook} />} />
           <Route path="/add" element={<AddBook addBook={addBook} />} />
           <Route path="/edit/:id" element={<EditBook books={books} updateBook={updateBook} />} />
+          <Route path="/details/:id" element={<BookDetails books={books} />} />
         </Routes>
       </div>
     </Router>

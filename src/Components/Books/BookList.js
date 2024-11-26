@@ -34,6 +34,7 @@ const BookList = ({ books, deleteBook }) => {
                             <td>{book.title}</td>
                             <td>{book.author}</td>
                             <td>
+                                <Link to={`/details/${index}`} style={{ marginLeft: '10px' }}  className="btn btn-outline-success" >Voir les détails</Link> 
                                 <Link to={`/edit/${index}`} style={{ marginLeft: '10px' }}  className="btn btn-outline-success" >Modifier</Link> 
                             </td>
                             <td>
