@@ -15,7 +15,7 @@ const BookList = ({ books, deleteBook }) => {
         <div>
             
             <Link to="/add" className='btn btn-primary mb-4'>Add new Book</Link>
-
+            <Link to="/qr" style={{ marginLeft: '10px' }}>Voir le Code QR</Link>
             <table className="table table-striped">
                 <thead> 
                     <tr>
