@@ -13,7 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,5 +39,10 @@
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
     "jest": "^27.5.1"
-  }
+  },
+  "jest": {
+  "testMatch": [
+    "<rootDir>/src/tests/**/*.{js,jsx,ts,tsx}"
+  ]
+}
 }
