@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import AddBook from './AddBook';
+import AddBook from '../Components/Books/AddBook';
 import '@testing-library/jest-dom';
 import { useNavigate } from 'react-router-dom';
 
