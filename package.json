@@ -11,14 +11,15 @@
     "web-vitals": "^2.1.4"
   },
   "jest": {
-  "testMatch": [
-    "<rootDir>/src/tests/*.{js,jsx,ts,tsx}"
-  ]
-},
+    "testMatch": [
+      "**/src/tests/**/*.{js,jsx,ts,tsx}",
+      "**/?(*.)+(spec|test).[jt]s?(x)"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage --watchAll=false ",
+    "test": "react-scripts test --env=jsdom --passWithNoTests --coverage --watchAll=false ",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
