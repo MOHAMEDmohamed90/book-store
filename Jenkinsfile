@@ -27,9 +27,14 @@ pipeline {
                 sh 'npm run build'
             }
         }
+        stage('Install Firebase CLI') {
+            steps {
+                sh 'npm install -g firebase-tools'  // Installe Firebase CLI globalement
+            }
+        }
         stage('Deploy to Firebase') {
             steps {
-                sh 'firebase deploy'
+                sh 'firebase deploy --token $FIREBASE_AUTH_TOKEN'  // Assurez-vous que le token est configuré comme variable d'environnement
             }
         }
     }
