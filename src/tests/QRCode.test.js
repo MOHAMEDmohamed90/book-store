@@ -14,6 +14,6 @@ describe('QRCode Component', () => {
     expect(qrImage).toBeInTheDocument();
 
     // Vérifie si l'image a la bonne source
-    expect(qrImage).toHaveAttribute('src1', './qr-code.png');
+    expect(qrImage).toHaveAttribute('src', './qr-code.png');
   });
 });
