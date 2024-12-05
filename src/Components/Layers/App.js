@@ -11,8 +11,22 @@ import QRCode from './QRCode';
 const App = () => {
   const [books, setBooks] = useState([
     { title: 'Le Petit Prince', author: 'Antoine de Saint-Exupéry' },
-    { title: 'Harry Potter', author: 'J.K. Rowling' },
+    { title: 'Harry Potter à l\'école des sorciers', author: 'J.K. Rowling' },
+    { title: '1984', author: 'George Orwell' },
+    { title: 'Pride and Prejudice', author: 'Jane Austen' },
+    { title: 'Moby-Dick', author: 'Herman Melville' },
+    { title: 'Les Misérables', author: 'Victor Hugo' },
+    { title: 'Don Quixote', author: 'Miguel de Cervantes' },
+    { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
+    { title: 'To Kill a Mockingbird', author: 'Harper Lee' },
+    { title: 'War and Peace', author: 'Leo Tolstoy' },
+    { title: 'One Hundred Years of Solitude', author: 'Gabriel García Márquez' },
+    { title: 'The Catcher in the Rye', author: 'J.D. Salinger' },
+    { title: 'The Lord of the Rings', author: 'J.R.R. Tolkien' },
+    { title: 'Ulysses', author: 'James Joyce' },
+    { title: 'The Divine Comedy', author: 'Dante Alighieri' },
   ]);
+  
 
   const addBook = (book) => {
     setBooks([...books, book]);
@@ -31,7 +45,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <h3>Application de gestion des Livres électroniques : </h3>
+        <h3> </h3>
         <Routes>
           <Route path="/" element={<BookList books={books} deleteBook={deleteBook} />} />
           <Route path="/add" element={<AddBook addBook={addBook} />} />
