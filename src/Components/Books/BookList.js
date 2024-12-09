@@ -1,8 +1,13 @@
-// src/components/BookList.js
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const BookList = ({ books, deleteBook }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredBooks = books.filter((book) =>
+    book.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const handleDelete = (index) => {
     if (window.confirm('Voulez-vous vraiment supprimer ce livre ?')) {
       deleteBook(index);
@@ -23,9 +28,19 @@ const BookList = ({ books, deleteBook }) => {
         </div>
       </div>
 
-      {books.length === 0 ? (
+      {/* Barre de recherche */}
+      <input
+        type="text"
+        className="form-control mb-4"
+        placeholder="Rechercher un livre par titre..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+
+      {/* Affichage des livres ou message d'alerte */}
+      {filteredBooks.length === 0 ? (
         <div className="alert alert-warning text-center" role="alert">
-          Aucun livre trouvé. Cliquez sur "Ajouter un Livre" pour commencer.
+          Aucun livre trouvé. Essayez un autre titre.
         </div>
       ) : (
         <table className="table table-hover table-bordered">
@@ -38,7 +53,7 @@ const BookList = ({ books, deleteBook }) => {
             </tr>
           </thead>
           <tbody>
-            {books.map((book, index) => (
+            {filteredBooks.map((book, index) => (
               <tr key={index} className="text-center align-middle">
                 <td>{index + 1}</td>
                 <td>{book.title}</td>
@@ -62,7 +77,7 @@ const BookList = ({ books, deleteBook }) => {
               </tr>
             ))}
           </tbody>
-        </table>    
+        </table>
       )}
     </div>
   );
